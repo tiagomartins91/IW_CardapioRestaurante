@@ -6,29 +6,16 @@
     android:layout_height="match_parent"
     tools:context="pt.ubi.di.pdm.tiagomartins.MenuPrincipal">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="104dp"
-        android:text="Consultar Pratos"
-        android:onClick="startConsultarPratos"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button"
+        style="@android:style/Widget.Material.Light.Button.Toggle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
-        android:onClick="startMenuAdmin"
-        android:text="ADMIN"
+        android:layout_marginBottom="128dp"
+        android:onClick="startConsultarPratos"
+        android:text="Consultar Pratos"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -36,5 +23,35 @@
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1" />
+
+    <Button
+        android:id="@+id/button4"
+        style="@android:style/Widget.Material.Light.Button.Toggle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
+        android:onClick="startMenuAdmin"
+        android:text="Administração"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="259dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/imagemcardapio" />
 
 </android.support.constraint.ConstraintLayout>

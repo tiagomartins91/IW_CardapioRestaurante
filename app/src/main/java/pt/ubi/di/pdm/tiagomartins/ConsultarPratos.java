@@ -37,8 +37,8 @@ public class ConsultarPratos extends AppCompatActivity {
 
         while (!queryres.isAfterLast()){
 
-            pratos_array.add(queryres.getString(1));
-            pratos_array.add(queryres.getString(3));
+            pratos_array.add(queryres.getString(0));
+            pratos_array.add(queryres.getString(2));
 
             queryres.moveToNext();
 

@@ -44,26 +44,32 @@ public class AdicionarPrato extends  AppCompatActivity {
         AjudanteParaAbrirBD ajudanteBD= new AjudanteParaAbrirBD(this);
         SQLiteDatabase db = ajudanteBD.getWritableDatabase();
 
+        //if (ajudanteBD.existeprato(nomeprato.getText().toString())==false) {
 
 
-        boolean inserirsucesso = ajudanteBD.inserirDados(nomeprato.getText().toString(),
-                                    descricao.getText().toString(),
-                                        Double.parseDouble(preco.getText().toString()));
+            boolean inserirsucesso = ajudanteBD.inserirDados(nomeprato.getText().toString(),
+                    descricao.getText().toString(),
+                    Double.parseDouble(preco.getText().toString()));
 
 
-        if(inserirsucesso == true){
+            if (inserirsucesso == true) {
 
-            Toast.makeText(AdicionarPrato.this, "Prato Inserido com sucesso!",Toast.LENGTH_LONG).show();
-            Intent menuPrincipal = new Intent(this, MenuPrincipal.class);
-            startActivity(menuPrincipal);
+                Toast.makeText(AdicionarPrato.this, "Prato Inserido com sucesso!", Toast.LENGTH_LONG).show();
+                Intent menuPrincipal = new Intent(this, MenuPrincipal.class);
+                startActivity(menuPrincipal);
 
+            } else {
+
+                Toast.makeText(AdicionarPrato.this, "Sem sucesso!", Toast.LENGTH_LONG).show();
+
+
+            //}
         }
-        else {
+        //else{
 
-            Toast.makeText(AdicionarPrato.this, "Sem sucesso!", Toast.LENGTH_LONG).show();
-
-
-        }
+          //  Toast.makeText(AdicionarPrato.this, "Prato já existe!", Toast.LENGTH_LONG).show();
+           // nomeprato.requestFocus();
+        //}
 
     }
 
