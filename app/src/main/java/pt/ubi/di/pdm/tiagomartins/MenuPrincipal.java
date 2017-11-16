@@ -7,6 +7,9 @@ import android.view.View;
 
 public class MenuPrincipal extends AppCompatActivity {
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +29,14 @@ public class MenuPrincipal extends AppCompatActivity {
 
     }
 
+    public void startConsultarPratos(View v){
 
+        Intent startConsultarPratos = new Intent(this, ConsultarPratos.class);
+
+        startActivity(startConsultarPratos);
+
+
+    }
 
 
 

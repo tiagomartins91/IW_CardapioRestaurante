@@ -7,6 +7,19 @@
     android:layout_height="match_parent">
 
 
+    <Button
+        android:id="@+id/adicionarprato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="133dp"
+        android:layout_marginTop="447dp"
+        android:onClick="adicionarpratobd"
+        android:text="Adicionar Prato"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
     <EditText
         android:id="@+id/nomeprato"
         android:layout_width="228dp"
@@ -20,7 +33,8 @@
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.237" />
+        app:layout_constraintHorizontal_bias="0.237"
+        />
 
 
     <EditText
@@ -38,12 +52,14 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="168dp"
-        app:layout_constraintHorizontal_bias="0.25">
+        app:layout_constraintHorizontal_bias="0.25"
+        android:background="@drawable/edit_textview"
+        android:gravity="start">
     </EditText>
 
 
     <EditText
-        android:id="@+id/preço"
+        android:id="@+id/preco"
         android:layout_width="225dp"
         android:layout_height="50dp"
         android:hint="Preço"

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 
 /**
  * Created by TiagoMartins on 11/11/2017.
@@ -12,19 +13,24 @@ import android.view.View;
 public class MenuAdmin extends AppCompatActivity {
 
 
+    Button menuadddish;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menuadmin);
+
+        menuadddish = (Button)findViewById(R.id.startmenuaadddish);
+
     }
 
 
-    public void startAdicionarPrato(View v){
+    public void startAddDishMenu(View v){
 
 
-        Intent startAdicionarPrato = new Intent(this , AdicionarPrato.class);
+        Intent startadddishmenu = new Intent(this , AdicionarPrato.class);
 
-        startActivity(startAdicionarPrato);
+        startActivity(startadddishmenu);
 
 
     }

@@ -7,14 +7,14 @@
     tools:context="pt.ubi.di.pdm.tiagomartins.MenuAdmin">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/startmenuaadddish"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="231dp"
         android:elevation="0dp"
-        android:onClick="startAdicionarPrato"
+        android:onClick="startAddDishMenu"
         android:text="Adicionar Prato"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
