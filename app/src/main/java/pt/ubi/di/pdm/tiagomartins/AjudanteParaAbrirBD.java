@@ -1,6 +1,7 @@
 package pt.ubi.di.pdm.tiagomartins;
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -67,9 +68,17 @@ public class AjudanteParaAbrirBD extends SQLiteOpenHelper {
 
     }
 
+    public Cursor getPratos (){
+
+        Cursor queryres;
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        queryres = db.rawQuery("select * " +  " from  " + NOME_TABELA1,null);
+
+        return queryres;
 
 
-
+    }
 
 
 }

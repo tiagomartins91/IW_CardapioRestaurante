@@ -11,7 +11,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="104dp"
-        android:text="Show Dishes"
+        android:text="Consultar Pratos"
+        android:onClick="startConsultarPratos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -19,7 +20,7 @@
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
-        tools:text="Consultar Pratos" />
+        />
 
     <Button
         android:id="@+id/button4"
