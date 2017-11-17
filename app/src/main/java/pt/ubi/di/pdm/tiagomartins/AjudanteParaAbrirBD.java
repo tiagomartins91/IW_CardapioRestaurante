@@ -86,29 +86,33 @@ public class AjudanteParaAbrirBD extends SQLiteOpenHelper {
         Cursor queryres;
         SQLiteDatabase db = this.getWritableDatabase();
 
-        //queryres = db.rawQuery("select *" + " from  " + NOME_TABELA1 + " where " + COLUNA1 + " = " + "prato"  , null);
+        queryres = db.rawQuery("select " + COLUNA1 + " from  " + NOME_TABELA1 + " where " + COLUNA1 + " = " + "'"+prato+"'", null);
 
-        queryres = db.rawQuery("select * " +  " from  " + NOME_TABELA1,null);
+        //System.out.println("Erro: " + queryres.getCount());
 
-        queryres.moveToFirst();
-
-
-        while (!queryres.isAfterLast()){
-
-            if(queryres.getString(0).equals(prato)==true)
-                return true;
-
-            queryres.moveToNext();
-
-        }
-
-        db.close();
-        queryres.close();
+        if(queryres.getCount()==0)
+            return false;
 
 
-        return false;
+
+        return true;
 
 
+    }
+
+
+    public Cursor swhowinfoprato(String prato){
+
+
+        Cursor queryres;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        queryres = db.rawQuery("select * "  + " from  " + NOME_TABELA1 + " where " + COLUNA1 + " = " + "'"+prato+"'", null);
+
+        System.out.println("Numero devolvido pela query: " + queryres.getCount());
+
+        return queryres;
 
 
     }

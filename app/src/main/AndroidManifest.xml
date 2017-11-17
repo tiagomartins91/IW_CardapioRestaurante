@@ -31,6 +31,10 @@
         <activity android:name=".ConsultarPratos" >
 
         </activity>
+        
+        <activity android:name=".InfoPrato">
+
+        </activity>
 
 
 
