@@ -13,7 +13,7 @@ import android.widget.Button;
 public class MenuAdmin extends AppCompatActivity {
 
 
-    Button menuadddish;
+    Button menuadddish, menueditardish;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class MenuAdmin extends AppCompatActivity {
         setContentView(R.layout.menuadmin);
 
         menuadddish = (Button)findViewById(R.id.startmenuaadddish);
-
+        menueditardish = (Button)findViewById(R.id.startmenueditardish);
     }
 
 
@@ -31,6 +31,16 @@ public class MenuAdmin extends AppCompatActivity {
         Intent startadddishmenu = new Intent(this , AdicionarPrato.class);
 
         startActivity(startadddishmenu);
+
+
+    }
+
+    public void startEditPratoMenu(View v){
+
+
+        Intent startmenuedit = new Intent(this , EditPrato.class);
+
+        startActivity(startmenuedit);
 
 
     }
