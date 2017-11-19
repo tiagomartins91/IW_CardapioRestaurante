@@ -4,8 +4,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -16,6 +19,7 @@ import java.util.ArrayList;
 public class EditPrato extends AppCompatActivity {
 
 
+    Button editb, saveb, cancelb;
     Spinner pratospinner;
     ArrayList<String> pratos_array = new ArrayList<String>();
 
@@ -27,6 +31,12 @@ public class EditPrato extends AppCompatActivity {
         setContentView(R.layout.editprato);
 
         pratospinner = (Spinner)findViewById(R.id.spinnerprato);
+        editb = (Button)findViewById(R.id.editbutton);
+        saveb = (Button)findViewById(R.id.savebutton);
+        cancelb = (Button)findViewById(R.id.cancelbutton);
+
+        saveb.setVisibility(View.INVISIBLE);
+        cancelb.setVisibility(View.INVISIBLE);
 
         AjudanteParaAbrirBD ajudanteBD= new AjudanteParaAbrirBD(this);
         SQLiteDatabase db = ajudanteBD.getWritableDatabase();
@@ -34,6 +44,8 @@ public class EditPrato extends AppCompatActivity {
         Cursor queryres = ajudanteBD.getPratos();
 
         queryres.moveToFirst();
+
+        pratos_array.add("Selecionar prato...");
 
         while (!queryres.isAfterLast()){
 
@@ -48,6 +60,43 @@ public class EditPrato extends AppCompatActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, pratos_array);
         pratospinner.setAdapter(adapter);
+
+
+
+    }
+
+
+    public void editprato (View v){
+
+        AjudanteParaAbrirBD ajudanteBD= new AjudanteParaAbrirBD(this);
+
+
+
+        if (pratospinner.getSelectedItem().toString().equals("Selecionar prato...")){
+
+            Toast.makeText(EditPrato.this, "Selecionar prato a editar!", Toast.LENGTH_LONG).show();
+            pratospinner.setFocusable(true);
+            pratospinner.requestFocus();
+
+
+
+        }
+
+        if (!pratospinner.getSelectedItem().toString().equals("Selecionar prato...")){
+
+            SQLiteDatabase db = ajudanteBD.getWritableDatabase();
+
+            String nomepratoeditar = pratospinner.getSelectedItem().toString();
+
+            Cursor queryres = ajudanteBD.swhowinfoprato(nomepratoeditar);
+
+            queryres.moveToFirst();
+
+
+
+
+        }
+
 
 
 
