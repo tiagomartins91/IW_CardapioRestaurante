@@ -41,6 +41,7 @@
 
     <Button
         android:id="@+id/cancelbutton"
+        android:onClick="butttoncancelar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -50,7 +51,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/editnomeprato"
         android:layout_width="90dp"
         android:layout_height="24dp"
         android:layout_marginStart="28dp"
@@ -60,6 +61,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:id="@+id/editdescricao"
         android:layout_width="228dp"
         android:layout_height="85dp"
         android:layout_marginStart="28dp"
@@ -68,6 +70,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:id="@+id/editpreco"
         android:layout_width="231dp"
         android:layout_height="34dp"
         android:layout_marginStart="28dp"

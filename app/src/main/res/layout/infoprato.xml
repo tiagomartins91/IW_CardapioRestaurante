@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:layout_editor_absoluteY="62dp">
+    tools:layout_editor_absoluteY="62dp"
+    >
+
 
 
     <TextView
@@ -32,6 +34,8 @@
         android:background="#8B4C39"
         android:textColor="#FFFFFF"
         android:textSize="20dp"
+        android:textAlignment="center"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.407"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -62,14 +66,14 @@
         android:layout_height="106dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="184dp"
         android:background="#8B4C39"
         android:gravity="start"
         android:lines="5"
         android:textColor="#FFFFFF"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.398"
+        app:layout_constraintHorizontal_bias="0.401"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_constraintLeft_creator="1"
@@ -80,17 +84,49 @@
 
     <TextView
         android:id="@+id/showpreco"
-        android:layout_width="254dp"
+        android:layout_width="71dp"
         android:layout_height="30dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="360dp"
+        android:background="#8B4C39"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.22"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.719" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="92dp"
+        android:layout_height="23dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="324dp"
+        android:text="Preço: "
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.221"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="28dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="360dp"
+        android:gravity="center"
+        android:text="€"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.028"
+        app:layout_constraintStart_toEndOf="@+id/showpreco"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

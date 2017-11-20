@@ -7,9 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 
 /**
@@ -20,6 +21,8 @@ public class EditPrato extends AppCompatActivity {
 
 
     Button editb, saveb, cancelb;
+    TextView nomep;
+    EditText editdes, editpreco;
     Spinner pratospinner;
     ArrayList<String> pratos_array = new ArrayList<String>();
 
@@ -34,9 +37,16 @@ public class EditPrato extends AppCompatActivity {
         editb = (Button)findViewById(R.id.editbutton);
         saveb = (Button)findViewById(R.id.savebutton);
         cancelb = (Button)findViewById(R.id.cancelbutton);
+        nomep = (TextView)findViewById(R.id.editnomeprato);
+        editdes = (EditText) findViewById(R.id.editdescricao);
+        editpreco = (EditText) findViewById(R.id.editpreco);
 
+        editb.setVisibility(View.VISIBLE);
         saveb.setVisibility(View.INVISIBLE);
         cancelb.setVisibility(View.INVISIBLE);
+        nomep.setVisibility(View.INVISIBLE);
+        editdes.setVisibility(View.INVISIBLE);
+        editpreco.setVisibility(View.INVISIBLE);
 
         AjudanteParaAbrirBD ajudanteBD= new AjudanteParaAbrirBD(this);
         SQLiteDatabase db = ajudanteBD.getWritableDatabase();
@@ -92,6 +102,16 @@ public class EditPrato extends AppCompatActivity {
 
             queryres.moveToFirst();
 
+            editb.setVisibility(View.INVISIBLE);
+            saveb.setVisibility(View.VISIBLE);
+            cancelb.setVisibility(View.VISIBLE);
+            nomep.setVisibility(View.VISIBLE);
+            editdes.setVisibility(View.VISIBLE);
+            editpreco.setVisibility(View.VISIBLE);
+
+            nomep.setText(queryres.getString(0));
+            editdes.setText(queryres.getString(1));
+            editpreco.setText(queryres.getString(2));
 
 
 
@@ -100,6 +120,19 @@ public class EditPrato extends AppCompatActivity {
 
 
 
+    }
+
+
+
+    public void butttoncancelar (View v){
+
+        editb.setVisibility(View.VISIBLE);
+        saveb.setVisibility(View.INVISIBLE);
+        cancelb.setVisibility(View.INVISIBLE);
+        nomep.setVisibility(View.INVISIBLE);
+        editdes.setVisibility(View.INVISIBLE);
+        editpreco.setVisibility(View.INVISIBLE);
+        pratospinner.setSelection(0);
     }
 
 

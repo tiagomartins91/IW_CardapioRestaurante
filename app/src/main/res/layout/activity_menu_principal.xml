@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="128dp"
         android:onClick="startConsultarPratos"
-        android:text="Consultar Pratos"
+        android:text="Consultar"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
