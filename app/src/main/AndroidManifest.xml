@@ -19,11 +19,19 @@
 
         </activity>
 
+        <activity
+            android:name=".LoginAdmin"
+            android:label="Login"
+            android:parentActivityName=".MenuPrincipal">
+
+
+        </activity>
+
 
         <activity
             android:name=".MenuAdmin"
             android:label="Administração"
-            android:parentActivityName=".MenuPrincipal"
+            android:parentActivityName=".LoginAdmin"
                 >
 
         </activity>
@@ -37,11 +45,18 @@
 
         <activity
             android:name=".ConsultarPratos"
+            android:label="Consultar Cardápio"
+            android:parentActivityName=".MenuPrincipal"
             >
 
         </activity>
         
-        <activity android:name=".InfoPrato">
+        <activity
+            android:name=".InfoPrato"
+            android:label="Detalhes"
+            android:parentActivityName=".ConsultarPratos"
+            >
+
 
         </activity>
 

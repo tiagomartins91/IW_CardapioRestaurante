@@ -24,7 +24,7 @@ public class InfoPrato extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.infoprato);
 
-        getSupportActionBar().setTitle("Detalhes");
+        //getSupportActionBar().setTitle("Detalhes");
 
 
         //recebe o intento que vem da outra actividade
