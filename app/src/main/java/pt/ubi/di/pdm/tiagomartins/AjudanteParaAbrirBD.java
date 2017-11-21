@@ -43,7 +43,7 @@ public class AjudanteParaAbrirBD extends SQLiteOpenHelper {
     AjudanteParaAbrirBD(Context context) {
 
         super(context, NOME_BASEDADOS, null, VERSAO_BASEDADOS);
-        //SQLiteDatabase db = this.getWritableDatabase();
+
     }
 
 
