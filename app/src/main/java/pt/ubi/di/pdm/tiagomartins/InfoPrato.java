@@ -45,10 +45,6 @@ public class InfoPrato extends AppCompatActivity{
 
         queryres.moveToFirst();
 
-        System.out.println(queryres.getString(0).toString());
-        System.out.println(queryres.getString(1).toString());
-        System.out.println(queryres.getString(2).toString());
-
 
 
         showprato.setText(queryres.getString(0));

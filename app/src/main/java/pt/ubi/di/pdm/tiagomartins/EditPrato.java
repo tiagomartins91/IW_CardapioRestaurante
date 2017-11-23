@@ -21,7 +21,7 @@ public class EditPrato extends AppCompatActivity {
 
 
     Button editb, saveb, cancelb;
-    TextView nomep;
+    TextView nomep, labelnomep, labeldescricao, labelpreco, labeleuros;
     EditText editdes, editpreco;
     Spinner pratospinner;
     ArrayList<String> pratos_array = new ArrayList<String>();
@@ -34,17 +34,33 @@ public class EditPrato extends AppCompatActivity {
         setContentView(R.layout.editprato);
 
         pratospinner = (Spinner)findViewById(R.id.spinnerprato);
+
         editb = (Button)findViewById(R.id.editbutton);
         saveb = (Button)findViewById(R.id.savebutton);
         cancelb = (Button)findViewById(R.id.cancelbutton);
-        nomep = (TextView)findViewById(R.id.editnomeprato);
+
+        nomep = (TextView)findViewById(R.id.showpratoedit);
+        labelnomep = (TextView) findViewById(R.id.labelnomeprato);
+        labeldescricao = (TextView) findViewById(R.id.labeldescricao);
+        labelpreco = (TextView)findViewById(R.id.labelpreco);
+        labeleuros = (TextView)findViewById(R.id.labeleuros);
+
+
         editdes = (EditText) findViewById(R.id.editdescricao);
         editpreco = (EditText) findViewById(R.id.editpreco);
+
+
 
         editb.setVisibility(View.VISIBLE);
         saveb.setVisibility(View.INVISIBLE);
         cancelb.setVisibility(View.INVISIBLE);
+
         nomep.setVisibility(View.INVISIBLE);
+        labelnomep.setVisibility(View.INVISIBLE);
+        labeldescricao.setVisibility(View.INVISIBLE);
+        labelpreco.setVisibility(View.INVISIBLE);
+        labeleuros.setVisibility(View.INVISIBLE);
+
         editdes.setVisibility(View.INVISIBLE);
         editpreco.setVisibility(View.INVISIBLE);
 
@@ -102,10 +118,19 @@ public class EditPrato extends AppCompatActivity {
 
             queryres.moveToFirst();
 
+
+
+
+            pratospinner.getSelectedView();
+            pratospinner.setEnabled(false);
             editb.setVisibility(View.INVISIBLE);
             saveb.setVisibility(View.VISIBLE);
             cancelb.setVisibility(View.VISIBLE);
             nomep.setVisibility(View.VISIBLE);
+            labelnomep.setVisibility(View.VISIBLE);
+            labeldescricao.setVisibility(View.VISIBLE);
+            labelpreco.setVisibility(View.VISIBLE);
+            labeleuros.setVisibility(View.VISIBLE);
             editdes.setVisibility(View.VISIBLE);
             editpreco.setVisibility(View.VISIBLE);
 
@@ -126,10 +151,16 @@ public class EditPrato extends AppCompatActivity {
 
     public void butttoncancelar (View v){
 
+        pratospinner.getSelectedView();
+        pratospinner.setEnabled(true);
         editb.setVisibility(View.VISIBLE);
         saveb.setVisibility(View.INVISIBLE);
         cancelb.setVisibility(View.INVISIBLE);
         nomep.setVisibility(View.INVISIBLE);
+        labelnomep.setVisibility(View.INVISIBLE);
+        labeldescricao.setVisibility(View.INVISIBLE);
+        labelpreco.setVisibility(View.INVISIBLE);
+        labeleuros.setVisibility(View.INVISIBLE);
         editdes.setVisibility(View.INVISIBLE);
         editpreco.setVisibility(View.INVISIBLE);
         pratospinner.setSelection(0);
