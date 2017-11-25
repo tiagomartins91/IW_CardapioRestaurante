@@ -63,6 +63,7 @@
         android:layout_width="225dp"
         android:layout_height="50dp"
         android:hint="Preço"
+        android:inputType="numberDecimal"
         android:drawableRight="@mipmap/ic_euro_symbol_black_24dp"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintLeft_creator="1"

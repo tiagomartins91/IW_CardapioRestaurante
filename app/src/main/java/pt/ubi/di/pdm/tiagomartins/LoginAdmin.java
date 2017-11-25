@@ -49,11 +49,21 @@ public class LoginAdmin extends AppCompatActivity {
 
         queryuser.moveToFirst();
 
-        if (TextUtils.isEmpty(et_username.getText().toString()) && TextUtils.isEmpty(et_password.getText().toString())) {
-            Toast.makeText(this, "Campos Obrigatórios", Toast.LENGTH_SHORT).show();
+
+        if (TextUtils.isEmpty(et_username.getText().toString())) {
+            //Toast.makeText(this, "Campos Obrigatórios", Toast.LENGTH_SHORT).show();
             et_username.requestFocus();
+            et_username.setError("Campo Obrigatório");
 
         }
+
+        if (TextUtils.isEmpty(et_password.getText().toString())){
+            et_password.requestFocus();
+            et_password.setError("Campo Obrigatório");
+
+        }
+
+
 
 
         if (queryuser.getString(0).equals(et_username.getText().toString())) {
@@ -73,13 +83,13 @@ public class LoginAdmin extends AppCompatActivity {
 
         if (flag == 0){
 
-            Toast.makeText(LoginAdmin.this, "Nome de utilizador errado!", Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginAdmin.this, "Nome de utilizador inválido!", Toast.LENGTH_LONG).show();
             et_username.requestFocus();
         }
 
         if (flag == 1){
 
-            Toast.makeText(LoginAdmin.this, "Palavra-passe errada!", Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginAdmin.this, "Palavra-passe inválida!", Toast.LENGTH_LONG).show();
             et_password.requestFocus();
         }
 

@@ -1,8 +1,11 @@
 package pt.ubi.di.pdm.tiagomartins;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -21,7 +24,7 @@ public class EditPrato extends AppCompatActivity {
 
 
     Button editb, saveb, cancelb;
-    TextView nomep, labelnomep, labeldescricao, labelpreco, labeleuros;
+    TextView nomep, labelnomep, labeldescricao, labelpreco;
     EditText editdes, editpreco;
     Spinner pratospinner;
     ArrayList<String> pratos_array = new ArrayList<String>();
@@ -43,7 +46,7 @@ public class EditPrato extends AppCompatActivity {
         labelnomep = (TextView) findViewById(R.id.labelnomeprato);
         labeldescricao = (TextView) findViewById(R.id.labeldescricao);
         labelpreco = (TextView)findViewById(R.id.labelpreco);
-        labeleuros = (TextView)findViewById(R.id.labeleuros);
+
 
 
         editdes = (EditText) findViewById(R.id.editdescricao);
@@ -52,14 +55,14 @@ public class EditPrato extends AppCompatActivity {
 
 
         editb.setVisibility(View.VISIBLE);
-        saveb.setVisibility(View.INVISIBLE);
-        cancelb.setVisibility(View.INVISIBLE);
+        saveb.setEnabled(false);
+        cancelb.setEnabled(false);
 
         nomep.setVisibility(View.INVISIBLE);
         labelnomep.setVisibility(View.INVISIBLE);
         labeldescricao.setVisibility(View.INVISIBLE);
         labelpreco.setVisibility(View.INVISIBLE);
-        labeleuros.setVisibility(View.INVISIBLE);
+
 
         editdes.setVisibility(View.INVISIBLE);
         editpreco.setVisibility(View.INVISIBLE);
@@ -106,6 +109,7 @@ public class EditPrato extends AppCompatActivity {
 
 
 
+
         }
 
         if (!pratospinner.getSelectedItem().toString().equals("Selecionar prato...")){
@@ -123,14 +127,15 @@ public class EditPrato extends AppCompatActivity {
 
             pratospinner.getSelectedView();
             pratospinner.setEnabled(false);
-            editb.setVisibility(View.INVISIBLE);
-            saveb.setVisibility(View.VISIBLE);
-            cancelb.setVisibility(View.VISIBLE);
+
+            editb.setEnabled(false);
+            saveb.setEnabled(true);
+            cancelb.setEnabled(true);
+
             nomep.setVisibility(View.VISIBLE);
             labelnomep.setVisibility(View.VISIBLE);
             labeldescricao.setVisibility(View.VISIBLE);
             labelpreco.setVisibility(View.VISIBLE);
-            labeleuros.setVisibility(View.VISIBLE);
             editdes.setVisibility(View.VISIBLE);
             editpreco.setVisibility(View.VISIBLE);
 
@@ -148,19 +153,59 @@ public class EditPrato extends AppCompatActivity {
     }
 
 
+    public void buttonGuardar (View V){
+
+
+        final AjudanteParaAbrirBD ajudanteBD = new AjudanteParaAbrirBD(this);
+        final Intent menuAdmin = new Intent(this, MenuAdmin.class);
+
+        AlertDialog.Builder a_builder = new AlertDialog.Builder(this);
+
+        a_builder.setMessage("Pretende mesmo fazer esta alteração?")
+                 .setCancelable(false)
+                 .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                     @Override
+                     public void onClick(DialogInterface dialogInterface, int i) {
+
+                         boolean updatesucesso = ajudanteBD.updatePrato(nomep.getText().toString(),
+                                 editdes.getText().toString(),
+                                 Double.parseDouble(editpreco.getText().toString()));
+
+                         if (updatesucesso == true) {
+
+                             Toast.makeText(EditPrato.this, "Prato alterado com sucesso!", Toast.LENGTH_LONG).show();
+                             startActivity(menuAdmin);
+
+                         }
+                     }
+                 })
+                .setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+
+        AlertDialog alert = a_builder.create();
+        alert.setTitle("AVISO");
+        alert.show();
+
+
+    }
+
+
 
     public void butttoncancelar (View v){
 
         pratospinner.getSelectedView();
         pratospinner.setEnabled(true);
-        editb.setVisibility(View.VISIBLE);
-        saveb.setVisibility(View.INVISIBLE);
-        cancelb.setVisibility(View.INVISIBLE);
+        editb.setEnabled(true);
+        saveb.setEnabled(false);
+        cancelb.setEnabled(false);
         nomep.setVisibility(View.INVISIBLE);
         labelnomep.setVisibility(View.INVISIBLE);
         labeldescricao.setVisibility(View.INVISIBLE);
         labelpreco.setVisibility(View.INVISIBLE);
-        labeleuros.setVisibility(View.INVISIBLE);
         editdes.setVisibility(View.INVISIBLE);
         editpreco.setVisibility(View.INVISIBLE);
         pratospinner.setSelection(0);

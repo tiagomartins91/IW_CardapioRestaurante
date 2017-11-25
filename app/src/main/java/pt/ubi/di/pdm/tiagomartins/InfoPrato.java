@@ -24,7 +24,6 @@ public class InfoPrato extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.infoprato);
 
-        //getSupportActionBar().setTitle("Detalhes");
 
 
         //recebe o intento que vem da outra actividade
@@ -35,15 +34,14 @@ public class InfoPrato extends AppCompatActivity{
         AjudanteParaAbrirBD ajudanteBD;
 
         ajudanteBD = new AjudanteParaAbrirBD(this); //ajudante da bd
-        //db = ajudanteBD.getWritableDatabase(); //acesso à bd
 
-        TextView showprato = (TextView) findViewById(R.id.showprato);
-        TextView showdescricao = (TextView) findViewById(R.id.showdescricao);
-        TextView showpreco = (TextView) findViewById(R.id.showpreco);
+         showprato = (TextView) findViewById(R.id.showprato);
+         showdescricao = (TextView) findViewById(R.id.showdescricao);
+         showpreco = (TextView) findViewById(R.id.showpreco);
 
-        Cursor queryres = ajudanteBD.swhowinfoprato(nomepratoItento);
+         Cursor queryres = ajudanteBD.swhowinfoprato(nomepratoItento);
 
-        queryres.moveToFirst();
+         queryres.moveToFirst();
 
 
 

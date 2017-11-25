@@ -62,7 +62,7 @@
         android:layout_below="@+id/username"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="316dp"
-        android:text="Login"
+        android:text="Entrar"
         android:onClick="loginbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

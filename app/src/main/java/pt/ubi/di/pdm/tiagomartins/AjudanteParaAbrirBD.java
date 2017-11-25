@@ -60,8 +60,9 @@ public class AjudanteParaAbrirBD extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion,int newVersion) {
 
-        //db.execSQL("DROP TABLE " + NOME_TABELA1 + ";");
+        //db.execSQL(CRIAR_TABELA_USER);
         //db.execSQL(CRIAR_TABELA_PRATO);
+        //db.execSQL("insert into User ( username, password ) values ('pdm', 'pdm')");
     }
 
 
@@ -76,6 +77,8 @@ public class AjudanteParaAbrirBD extends SQLiteOpenHelper {
         contentValues.put(T1_COLUNA3, preco);
 
         long resultado = db.insert(NOME_TABELA1,null,contentValues);
+
+        db.close();
 
         if (resultado==-1)
             return false;
@@ -105,7 +108,6 @@ public class AjudanteParaAbrirBD extends SQLiteOpenHelper {
 
         queryres = db.rawQuery("select " + T1_COLUNA1 + " from  " + NOME_TABELA1 + " where " + T1_COLUNA1 + " = " + "'"+prato+"'", null);
 
-        //System.out.println("Erro: " + queryres.getCount());
 
         if(queryres.getCount()==0)
             return false;
@@ -127,7 +129,6 @@ public class AjudanteParaAbrirBD extends SQLiteOpenHelper {
 
         queryres = db.rawQuery("select * "  + " from  " + NOME_TABELA1 + " where " + T1_COLUNA1 + " = " + "'"+prato+"'", null);
 
-        System.out.println("Numero devolvido pela query: " + queryres.getCount());
 
         return queryres;
 
@@ -143,6 +144,32 @@ public class AjudanteParaAbrirBD extends SQLiteOpenHelper {
         queryres = db.rawQuery("select * " +  " from  " + NOME_TABELA2,null);
 
         return queryres;
+
+    }
+
+
+    public boolean updatePrato(String nomedoprato, String descricao, double novopreco){
+
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues newValues = new ContentValues();
+        newValues.put(T1_COLUNA2, descricao);
+        newValues.put(T1_COLUNA3, novopreco);
+
+
+        long resultado = db.update(NOME_TABELA1,newValues, T1_COLUNA1 +  " = " + "'"+nomedoprato+"'" , null);
+
+
+        db.close();
+        //db.execSQL(" UPDATE " + NOME_TABELA1 + " SET " + T1_COLUNA2 + " = " + "'" + descricao + "'"
+         //+ T1_COLUNA3 + " = " + preco1 + " where " + T1_COLUNA1 + " = " + "'"+nomedoprato+"'");
+
+        if (resultado==-1)
+            return false;
+
+
+        return true;
 
     }
 
