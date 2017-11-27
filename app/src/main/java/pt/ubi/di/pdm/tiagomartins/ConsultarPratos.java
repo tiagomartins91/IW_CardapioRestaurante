@@ -87,29 +87,10 @@ public class ConsultarPratos extends AppCompatActivity {
 
                     HashMap<String, String> getItemclick = (HashMap<String, String>)  aminhalistview.getItemAtPosition(position);
 
-                    //Log.i("Teste", getItemclick.toString()); ???
-
                     Set<String> keys = getItemclick.keySet();
 
 
-                   String nomeprato = getItemclick.get("First Line").toString();
-
-                   //Log.i("Teste", nomeprato);
-
-
-                    /* ver isto
-                    Iterator itr = keys.iterator();
-                    String key=null;
-                    String nomep=null;
-
-                    while(itr.hasNext()) {
-
-                        key = (String)itr.next();
-                        nomep = getItemclick.get(key);
-
-
-                    }*/
-
+                    String nomeprato = getItemclick.get("First Line").toString();
 
 
                     Bundle bundle = new Bundle();
