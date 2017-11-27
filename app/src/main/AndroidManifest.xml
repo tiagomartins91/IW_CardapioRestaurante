@@ -30,9 +30,7 @@
 
         <activity
             android:name=".MenuAdmin"
-            android:label="Administração"
-            android:parentActivityName=".LoginAdmin"
-                >
+            android:label="Administração">
 
         </activity>
 
@@ -44,17 +42,38 @@
         </activity>
 
         <activity
-            android:name=".ConsultarPratos"
-            android:label="Consultar Cardápio"
-            android:parentActivityName=".MenuPrincipal"
+            android:name=".RemoverPratos"
+            android:label="Remover Prato"
+            android:parentActivityName=".MenuAdmin"
             >
 
         </activity>
+
+
+        <activity
+            android:name=".ConfirmRemoverPrato"
+            android:label="Remover Prato"
+            android:parentActivityName=".RemoverPratos"
+            >
+
+        </activity>
+
+
+
+        <activity
+            android:name=".ConsultarPratos"
+            android:label="Cardápio"
+            android:parentActivityName=".MenuPrincipal">
+
+        </activity>
+
+
+
         
         <activity
             android:name=".InfoPrato"
             android:label="Detalhes"
-            android:parentActivityName=".ConsultarPratos"
+            android:parentActivityName=".RemoverPratos"
             >
 
 

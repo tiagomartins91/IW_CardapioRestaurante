@@ -53,6 +53,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="312dp"
         android:drawableBottom="@mipmap/icons8_delete"
+        android:onClick="startremovePrato"
         android:text="Eliminar Prato "
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         app:layout_constraintEnd_toEndOf="parent"

@@ -35,14 +35,13 @@ public class InfoPrato extends AppCompatActivity{
 
         ajudanteBD = new AjudanteParaAbrirBD(this); //ajudante da bd
 
-         showprato = (TextView) findViewById(R.id.showprato);
-         showdescricao = (TextView) findViewById(R.id.showdescricao);
-         showpreco = (TextView) findViewById(R.id.showpreco);
+        showprato = (TextView) findViewById(R.id.showprato);
+        showdescricao = (TextView) findViewById(R.id.showdescricao);
+        showpreco = (TextView) findViewById(R.id.showpreco);
 
-         Cursor queryres = ajudanteBD.swhowinfoprato(nomepratoItento);
+        Cursor queryres = ajudanteBD.swhowinfoprato(nomepratoItento);
 
-         queryres.moveToFirst();
-
+        queryres.moveToFirst();
 
 
         showprato.setText(queryres.getString(0));

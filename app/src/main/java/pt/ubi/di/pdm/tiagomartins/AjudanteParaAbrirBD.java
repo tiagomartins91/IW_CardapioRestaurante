@@ -130,6 +130,7 @@ public class AjudanteParaAbrirBD extends SQLiteOpenHelper {
         queryres = db.rawQuery("select * "  + " from  " + NOME_TABELA1 + " where " + T1_COLUNA1 + " = " + "'"+prato+"'", null);
 
 
+
         return queryres;
 
 
@@ -172,6 +173,21 @@ public class AjudanteParaAbrirBD extends SQLiteOpenHelper {
         return true;
 
     }
+
+    //remover prato
+    public void removerPrato(String nomeprato) {
+
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+
+        db.execSQL("DELETE FROM " + NOME_TABELA1 + " WHERE " + T1_COLUNA1 + "='" + nomeprato + "'");
+
+
+        db.close();
+    }
+
+
 
 
 }

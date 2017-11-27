@@ -46,6 +46,18 @@ public class MenuAdmin extends AppCompatActivity {
 
     }
 
+    public void startremovePrato(View v){
+
+
+        Intent startmenuremover = new Intent(this , RemoverPratos.class);
+
+        startActivity(startmenuremover);
+
+
+    }
+
+
+
     //falta o eliminar
 
 
