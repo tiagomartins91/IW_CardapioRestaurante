@@ -35,11 +35,12 @@ public class ConsultarPratos extends AppCompatActivity {
             SQLiteDatabase db = ajudanteBD.getWritableDatabase();
 
 
-            Cursor queryres = ajudanteBD.getPratos();
+            Cursor queryres = ajudanteBD.getPratos(); //query para todos os pratos da bd
 
             queryres.moveToFirst();
 
-            HashMap<String,String> hash_resultado_bd = new HashMap<>();
+            HashMap<String,String> hash_resultado_bd = new HashMap<>(); //hasmap com dados da query
+
             final ListView aminhalistview = (ListView) findViewById(R.id.listview);
 
             while (!queryres.isAfterLast()){
@@ -53,7 +54,7 @@ public class ConsultarPratos extends AppCompatActivity {
             queryres.close();
             db.close();
 
-
+            //criar uma listview personalizada com 2 xml
 
             List<HashMap<String,String>> listItens = new ArrayList<>();
 

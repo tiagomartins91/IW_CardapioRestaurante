@@ -52,9 +52,7 @@ public class AjudanteParaAbrirBD extends SQLiteOpenHelper {
 
         db.execSQL(CRIAR_TABELA_PRATO);
         db.execSQL(CRIAR_TABELA_USER);
-        //db.execSQL("insert into " + NOME_TABELA2 + "(" + T2_COLUNA1 + "," + T2_COLUNA2 +  ")" + values ( 'pdm' + "," + 'pdm' ) );
-
-        db.execSQL("insert into User ( username, password ) values ('pdm', 'pdm')");
+        db.execSQL("insert into User ( username, password ) values ('pdm', 'pdm')"); //inserir na tabela o unico user até agora
     }
 
     @Override
@@ -67,7 +65,7 @@ public class AjudanteParaAbrirBD extends SQLiteOpenHelper {
 
 
 
-    public boolean inserirDados (String nomedoprato,String descricao,double preco){
+    public boolean inserirDados (String nomedoprato,String descricao,double preco){ //inserir prato na tabela
 
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -88,7 +86,7 @@ public class AjudanteParaAbrirBD extends SQLiteOpenHelper {
 
     }
 
-    public Cursor getPratos (){
+    public Cursor getPratos (){ //query de todos os pratos da tabela
 
         Cursor queryres;
         SQLiteDatabase db = this.getWritableDatabase();
@@ -100,7 +98,7 @@ public class AjudanteParaAbrirBD extends SQLiteOpenHelper {
 
     }
 
-    public boolean existeprato(String prato){
+    public boolean existeprato(String prato){ //verificar se já existe um prato com dado nome
 
 
         Cursor queryres;
@@ -120,7 +118,7 @@ public class AjudanteParaAbrirBD extends SQLiteOpenHelper {
     }
 
 
-    public Cursor swhowinfoprato(String prato){
+    public Cursor swhowinfoprato(String prato){ //ver dados de um dado prato
 
 
         Cursor queryres;
@@ -136,7 +134,7 @@ public class AjudanteParaAbrirBD extends SQLiteOpenHelper {
 
     }
 
-    public Cursor getuser(){
+    public Cursor getuser(){ //query de verificação do user
 
         Cursor queryres;
 
@@ -149,7 +147,7 @@ public class AjudanteParaAbrirBD extends SQLiteOpenHelper {
     }
 
 
-    public boolean updatePrato(String nomedoprato, String descricao, double novopreco){
+    public boolean updatePrato(String nomedoprato, String descricao, double novopreco){ //update dos campos do prato
 
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -163,8 +161,7 @@ public class AjudanteParaAbrirBD extends SQLiteOpenHelper {
 
 
         db.close();
-        //db.execSQL(" UPDATE " + NOME_TABELA1 + " SET " + T1_COLUNA2 + " = " + "'" + descricao + "'"
-         //+ T1_COLUNA3 + " = " + preco1 + " where " + T1_COLUNA1 + " = " + "'"+nomedoprato+"'");
+
 
         if (resultado==-1)
             return false;
@@ -174,8 +171,7 @@ public class AjudanteParaAbrirBD extends SQLiteOpenHelper {
 
     }
 
-    //remover prato
-    public void removerPrato(String nomeprato) {
+    public void removerPrato(String nomeprato) { //remover prato
 
 
         SQLiteDatabase db = this.getWritableDatabase();

@@ -34,26 +34,28 @@ public class RemoverPratos extends AppCompatActivity {
         final ListView pratos = (ListView) findViewById(R.id.listapratos);
 
 
-        Cursor queryres = ajudanteBD.getPratos();
+        Cursor queryres = ajudanteBD.getPratos(); //query para obter todos os pratos e mostrar na listview
 
         queryres.moveToFirst();
 
         while (!queryres.isAfterLast()){
 
-            pratos_array.add(queryres.getString(0)); //nomedo prato
+            pratos_array.add(queryres.getString(0)); //nome do prato
 
             queryres.moveToNext();
 
         }
 
         queryres.close();
-        db.close();
+        db.close(); //fechar acesso à bd
+
+        //criar a listview
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, pratos_array);
         pratos.setAdapter(adapter);
 
 
-        //ir para info dos pratos
+        //ir para o layout do prato selecionado a remover
 
         pratos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

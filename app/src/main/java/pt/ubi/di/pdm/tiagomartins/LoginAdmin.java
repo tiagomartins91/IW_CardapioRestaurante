@@ -37,7 +37,7 @@ public class LoginAdmin extends AppCompatActivity {
     }
 
 
-    public void loginbutton (View v){
+    public void loginbutton (View v){ //metoto do botão de login com verificação dos campos
 
 
         int flag = 0;
@@ -51,7 +51,6 @@ public class LoginAdmin extends AppCompatActivity {
 
 
         if (TextUtils.isEmpty(et_username.getText().toString())) {
-            //Toast.makeText(this, "Campos Obrigatórios", Toast.LENGTH_SHORT).show();
             et_username.requestFocus();
             et_username.setError("Campo Obrigatório");
 
@@ -83,7 +82,7 @@ public class LoginAdmin extends AppCompatActivity {
 
         if (flag == 0){
 
-            Toast.makeText(LoginAdmin.this, "Nome de utilizador inválido!", Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginAdmin.this, "Nome de utilizador inválido ou não existe!", Toast.LENGTH_LONG).show();
             et_username.requestFocus();
         }
 

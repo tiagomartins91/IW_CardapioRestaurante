@@ -14,15 +14,18 @@ import android.widget.Toast;
 public class MenuAdmin extends AppCompatActivity {
 
 
-    Button menuadddish, menueditardish;
+    Button menuadddish, menueditardish, menuremover, sair;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menuadmin);
 
         menuadddish = (Button)findViewById(R.id.startmenuaadddish);
         menueditardish = (Button)findViewById(R.id.startmenueditardish);
+        menuremover = (Button)findViewById(R.id.startmenudelete);
+        sair = (Button)findViewById(R.id.startmenudelete);
     }
 
 
@@ -57,10 +60,6 @@ public class MenuAdmin extends AppCompatActivity {
     }
 
 
-
-    //falta o eliminar
-
-
     public void sair (View v){
 
 
@@ -70,7 +69,6 @@ public class MenuAdmin extends AppCompatActivity {
 
 
     }
-
 
 
 }

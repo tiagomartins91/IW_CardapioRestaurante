@@ -3,7 +3,6 @@ package pt.ubi.di.pdm.tiagomartins;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -34,9 +33,7 @@ public class ConfirmRemoverPrato extends AppCompatActivity {
         nomepratoItento = bundle.getString("nome");
 
 
-        AjudanteParaAbrirBD ajudanteBD;
-
-        ajudanteBD = new AjudanteParaAbrirBD(this); //ajudante da bd
+        AjudanteParaAbrirBD ajudanteBD = new AjudanteParaAbrirBD(this); //ajudante da bd
 
         showprato = (TextView) findViewById(R.id.showpratoremove);
         showdescricao = (TextView) findViewById(R.id.showdescricaoremove);
@@ -60,7 +57,7 @@ public class ConfirmRemoverPrato extends AppCompatActivity {
 
 
 
-    public void remover(View v){
+    public void remover(View v){ //botão remover com um Alerta para dupla confirmação da acção do user
 
         bremover = (Button)findViewById(R.id.buttonremover);
 

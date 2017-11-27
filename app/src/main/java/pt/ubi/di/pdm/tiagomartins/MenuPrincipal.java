@@ -16,6 +16,8 @@ public class MenuPrincipal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
 
+
+        //para o caso da aplicação nunca ter sido instalada, e criar logo a bd com dados necessários
         ajudanteBD = new AjudanteParaAbrirBD(this);
         SQLiteDatabase db = ajudanteBD.getWritableDatabase();
 

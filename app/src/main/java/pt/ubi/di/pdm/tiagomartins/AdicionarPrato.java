@@ -28,14 +28,11 @@ public class AdicionarPrato extends  AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.adicionarprato);
 
-        ajudanteBD = new AjudanteParaAbrirBD(this);
-
-
 
     }
 
 
-    public void adicionarpratobd(View v) {
+    public void adicionarpratobd(View v) { //meto do botão adicionar prato
 
         int flag = 0;
 
@@ -44,24 +41,25 @@ public class AdicionarPrato extends  AppCompatActivity {
         preco = (EditText) findViewById(R.id.preco);
         adicionarprato = (Button) findViewById(R.id.adicionarprato);
 
-        if (flag == 0) {
+        if (flag == 0) { // verificação se as caixas estão vazias
 
             if (TextUtils.isEmpty(nomeprato.getText().toString())) {
 
-                Toast.makeText(this, "Nome do prato obrigatório!", Toast.LENGTH_SHORT).show();
                 nomeprato.requestFocus();
+                nomeprato.setError("Nome do prato obrigatório");
 
             }
             else if (TextUtils.isEmpty(descricao.getText().toString())) {
 
-                Toast.makeText(this, "Descrição obrigatória!", Toast.LENGTH_SHORT).show();
+
                 descricao.requestFocus();
+                descricao.setError("Descricação obrigatória");
 
             }
             else if (TextUtils.isEmpty(preco.getText().toString())) {
 
-                Toast.makeText(this, "Preço obrigatório!", Toast.LENGTH_SHORT).show();
                 preco.requestFocus();
+                preco.setError("Preço obrigatório");
 
             }
             else
@@ -77,7 +75,7 @@ public class AdicionarPrato extends  AppCompatActivity {
             AjudanteParaAbrirBD ajudanteBD = new AjudanteParaAbrirBD(this);
             SQLiteDatabase db = ajudanteBD.getWritableDatabase();
 
-            if (ajudanteBD.existeprato(nomeprato.getText().toString()) == false) {
+            if (ajudanteBD.existeprato(nomeprato.getText().toString()) == false) { //inserir teste na bd com verificação se já existe
 
 
                 boolean inserirsucesso = ajudanteBD.inserirDados(nomeprato.getText().toString(),

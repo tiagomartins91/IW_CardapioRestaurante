@@ -15,7 +15,7 @@ import android.widget.Toolbar;
 public class InfoPrato extends AppCompatActivity{
 
     String nomepratoItento;
-    TextView showprato, showdescricao, showpreco;
+    TextView showinfoprato, showinfodescricao, showinfopreco;
 
 
     @Override
@@ -23,8 +23,6 @@ public class InfoPrato extends AppCompatActivity{
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.infoprato);
-
-
 
         //recebe o intento que vem da outra actividade
         Bundle bundle = getIntent().getExtras();
@@ -35,19 +33,17 @@ public class InfoPrato extends AppCompatActivity{
 
         ajudanteBD = new AjudanteParaAbrirBD(this); //ajudante da bd
 
-        showprato = (TextView) findViewById(R.id.showprato);
-        showdescricao = (TextView) findViewById(R.id.showdescricao);
-        showpreco = (TextView) findViewById(R.id.showpreco);
+        showinfoprato = (TextView) findViewById(R.id.showprato);
+        showinfodescricao = (TextView) findViewById(R.id.showdescricao);
+        showinfopreco = (TextView) findViewById(R.id.showpreco);
 
-        Cursor queryres = ajudanteBD.swhowinfoprato(nomepratoItento);
+        Cursor queryres = ajudanteBD.swhowinfoprato(nomepratoItento); //acesso ao metodo que devolve a informação de um dado prato (tipo cursor)
 
         queryres.moveToFirst();
 
-
-        showprato.setText(queryres.getString(0));
-        showdescricao.setText(queryres.getString(1));
-        showpreco.setText(queryres.getString(2));
-
+        showinfoprato.setText(queryres.getString(0));
+        showinfodescricao.setText(queryres.getString(1));
+        showinfopreco.setText(queryres.getString(2));
 
         queryres.close();
 
