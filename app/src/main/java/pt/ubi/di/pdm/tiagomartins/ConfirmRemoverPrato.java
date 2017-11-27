@@ -61,9 +61,9 @@ public class ConfirmRemoverPrato extends AppCompatActivity {
 
         bremover = (Button)findViewById(R.id.buttonremover);
 
-        AjudanteParaAbrirBD ajudanteBD = new AjudanteParaAbrirBD(this); //ajudante da bd
+        final AjudanteParaAbrirBD ajudanteBD = new AjudanteParaAbrirBD(this); //ajudante da bd
 
-        ajudanteBD.removerPrato(showprato.getText().toString());
+
 
         final Intent voltaraoremover = new Intent(this, RemoverPratos.class);
 
@@ -76,6 +76,7 @@ public class ConfirmRemoverPrato extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
+                        ajudanteBD.removerPrato(showprato.getText().toString());
                         Toast.makeText(ConfirmRemoverPrato.this, "Prato removido com sucesso!", Toast.LENGTH_LONG).show();
                         startActivity(voltaraoremover);
                     }

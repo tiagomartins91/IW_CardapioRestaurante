@@ -9,12 +9,15 @@
 
     <Button
         android:id="@+id/adicionarprato"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@android:style/Widget.Holo.Button"
+        android:layout_width="129dp"
+        android:layout_height="51dp"
         android:layout_marginLeft="133dp"
         android:layout_marginTop="447dp"
+        android:background="@color/colorPrimary"
         android:onClick="adicionarpratobd"
         android:text="Adicionar Prato"
+        android:textColor="#ffffff"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_constraintLeft_creator="1"

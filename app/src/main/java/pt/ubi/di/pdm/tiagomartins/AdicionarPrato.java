@@ -86,7 +86,7 @@ public class AdicionarPrato extends  AppCompatActivity {
                 if (inserirsucesso == true) {
 
                     db.close();
-                    Toast.makeText(AdicionarPrato.this, "Prato Inserido com sucesso!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AdicionarPrato.this, "Prato inserido com sucesso!", Toast.LENGTH_LONG).show();
                     Intent menuAdmin = new Intent(this, MenuAdmin.class);
                     startActivity(menuAdmin);
 
